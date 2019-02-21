@@ -56,7 +56,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, PlaceSelection
 
     private lateinit var autocompleteFragment: PlaceAutocompleteFragment
 
-    private var receiverId: String? = null
+    private lateinit var receiverId: String
 
     private var receiverType: String? = null
 
@@ -77,7 +77,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, PlaceSelection
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this@LocationActivity)
 
 
-        receiverId = intent?.getStringExtra(StringContract.IntentString.ID)
+        receiverId = intent.getStringExtra(StringContract.IntentString.ID)
         receiverType = intent?.getStringExtra(StringContract.IntentString.RECIVER_TYPE)
 
         autocompleteFragment = fragmentManager.findFragmentById(R.id.place_autocomplete_fragment) as PlaceAutocompleteFragment
