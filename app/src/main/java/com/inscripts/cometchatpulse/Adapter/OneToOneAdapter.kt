@@ -547,7 +547,7 @@ class OneToOneAdapter(val context: Context, val ownerId: String) : RecyclerView.
                         try {
                             player?.setDataSource(filePath)
                             player?.prepare()
-                            player?.start()
+                           
                         } catch (e: IOException) {
                             e.printStackTrace()
                         }
